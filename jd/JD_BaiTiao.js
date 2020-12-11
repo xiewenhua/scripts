@@ -1,7 +1,7 @@
 /*
 [task_local]
 # 京东金融领白条券  9点执行（周五券要9点开始领）
-0 9 * * * JD_BaiTiao.js
+0 9 * * * https://raw.githubusercontent.com/xiewenhua/scripts/master/jd/JD_BaiTiao.js
 */
 const $ = new Env('天天领白条券');
 const Key = '';//单引号内自行填写您抓取的京东Cookie
@@ -12,7 +12,10 @@ var CookieJD = '';//实际使用的cookie
 const JR_API_HOST = 'https://jrmkt.jd.com/activity/newPageTake/takePrize';
 const Prize = {
   //每周五领55-5券 每月两次
-  PrizeFriday :{ Id : `Q96200731141823255924Qy`, Body : `activityId=Q96200731141823255924Qy&eid=${randomWord(false,90).toUpperCase()}&fp=${randomWord(false,32).toLowerCase()}`},
+  // https://jrmkt.jd.com/ptp/wl/vouchers.html?activityId=Q529284818011r8O2Y8L07082T9kE 此为新链接，旧链接已失效
+  // Q529284818011r8O2Y8L07082T9kE
+  // Q96200731141823255924Qy
+  PrizeFriday :{ Id : `Q96200731141823255924Qy`, Body : `activityId=Q529284818011r8O2Y8L07082T9kE&eid=${randomWord(false,90).toUpperCase()}&fp=${randomWord(false,32).toLowerCase()}`},
   //每日领随机白条券
   PrizeDaily : { Id : `Q229326314441137002k96C`, Body : `activityId=Q229326314441137002k96C&eid=${randomWord(false,90).toUpperCase()}&fp=${randomWord(false,32).toLowerCase()}`}
 }
